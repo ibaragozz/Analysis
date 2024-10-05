@@ -7,3 +7,18 @@ data = {
 }
 df = pd.DataFrame(data)
 
+df['gender'] = df['gender'].astype('category')
+df['department'] = df['department'].astype('category')
+
+# print(df['gender'].cat.categories)
+# print(df['department'].cat.categories)
+
+# print(df['department'].cat.codes)
+
+# df['department'] = df['department'].cat.add_categories(['Finance'])
+# print(df['department'].cat.categories)
+#
+# df['department'] = df['department'].cat.remove_categories(['Finance'])
+# print(df['department'].cat.categories)
+
+print(df)
