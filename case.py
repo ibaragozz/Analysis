@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 import time
-
+import csv
 
 # Инициализация драйвера
 driver = webdriver.Chrome()
@@ -17,7 +17,7 @@ driver.get(url)
 time.sleep(5)
 
 # Парсинг цен
-prices = driver.find_elements(By.XPATH, '//span[contains(@class, "price")]/span')
+prices = driver.find_elements(By.XPATH, "//span[@data-mark='MainPrice']/span")
 
 # Сохраняем данные в CSV файл
 with open('prices.csv', mode='w', newline='', encoding='utf-8') as file:
