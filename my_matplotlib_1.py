@@ -1,22 +1,30 @@
-import pandas as pd
 import matplotlib.pyplot as plt
 
-data = {'value': [1, 2, 3, 3, 3, 4, 4, 4, 5, 6, 7, 8, 9, 10, 55]}
-
-df = pd.DataFrame(data)
-
-# df['value'].hist()
-
-# df.boxplot(column='value')
+# x = [2,6,8,14,20]
+# y = [6,4,10,12,16]
+#
+# plt.plot(x, y)
+#
+# plt.title('Пример простого линейного графика')
+# plt.xlabel('x ось')
+# plt.ylabel('y ось')
+#
 # plt.show()
 
-Q1 = df['value'].quantile(0.25)
-Q3 = df['value'].quantile(0.75)
-IQR = Q3 - Q1
-downside = Q1 - 1.5 * IQR
-upside = Q3 + 1.5 * IQR
-df_new = df[(df['value'] >= downside) & (df['value'] <= upside)]
+# data = [1,2,2,3,4,4,4,5,6,6,6,6,6]
+#
+# plt.hist(data, bins=6)
+# plt.xlabel('x ось')
+# plt.ylabel('y ось')
+# plt.title('Пример гистограммы')
+#
+# plt.show()
 
-df_new.boxplot(column='value')
+x = [1,4,6,7]
+y = [3,5,8,10]
+plt.scatter(x, y)
+plt.xlabel('x ось')
+plt.ylabel('y ось')
+plt.title('Пример диаграммы рассеяния')
+
 plt.show()
-
